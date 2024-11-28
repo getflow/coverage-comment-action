@@ -67,5 +67,5 @@ runs:
     BADGE_FILENAME: ${{ inputs.BADGE_FILENAME }}
     MINIMUM_GREEN: ${{ inputs.MINIMUM_GREEN }}
     MINIMUM_ORANGE: ${{ inputs.MINIMUM_ORANGE }}
-    TOKEN_ID: ${{ inputs.TOKEN_ID }}
-    TOKEN_SECRET: ${{ inputs.TOKEN_SECRET }}
+    TOKEN_ID: ${{ inputs.CLOUDFLARE_TOKEN_ID }}
+    TOKEN_SECRET: ${{ inputs.CLOUDFLARE_TOKEN_SECRET }}
