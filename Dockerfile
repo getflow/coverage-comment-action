@@ -18,6 +18,8 @@ COPY src/docker-entrypoint.sh /
 COPY src/add-to-wiki /usr/local/bin/
 COPY src/default.md.j2 /var/
 
+RUN chmod +x /docker-entrypoint.sh
+
 WORKDIR /workdir
 
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
