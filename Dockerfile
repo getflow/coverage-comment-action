@@ -14,10 +14,10 @@ COPY src/requirements.txt ./
 RUN pip install -r requirements.txt
 
 COPY src/entrypoint /usr/local/bin/
-COPY src/docker-entrypoint.sh /usr/local/bin/
+COPY src/docker-entrypoint.sh /
 COPY src/add-to-wiki /usr/local/bin/
 COPY src/default.md.j2 /var/
 
 WORKDIR /workdir
 
-ENTRYPOINT [ "docker-entrypoint.sh" ]
+ENTRYPOINT [ "/docker-entrypoint.sh" ]
