@@ -17,7 +17,7 @@ import xmltodict
 
 MARKER = """<!-- This comment was produced by coverage-comment-action -->"""
 SHIELD_URL = "https://img.shields.io/endpoint?url={url}"
-JSON_URL = "https://raw.githubusercontent.com/wiki/{repo_name}/{filename}"
+JSON_URL = os.getenv("JSON_URL", "https://raw.githubusercontent.com/wiki/{repo_name}/{filename}")
 
 
 def main():
