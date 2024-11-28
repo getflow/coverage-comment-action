@@ -23,6 +23,10 @@ inputs:
       A GitHub token to write comments and write the badge to the wiki
       (``github.token``)
     required: true
+  GITHUB_WIKI:
+    description: >
+      Wiki repository clone url
+    required: true
   COVERAGE_FILE:
     description: >
       Path and filename of the coverage XML file to analyze.
@@ -64,6 +68,7 @@ runs:
   image: Dockerfile
   env:
     GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
+    GITHUB_WIKI: ${{ inputs.GITHUB_WIKI }}
     COVERAGE_FILE: ${{ inputs.COVERAGE_FILE }}
     COMMENT_TEMPLATE: ${{ inputs.COMMENT_TEMPLATE }}
     DIFF_COVER_ARGS: ${{ inputs.DIFF_COVER_ARGS }}
