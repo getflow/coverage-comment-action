@@ -6,6 +6,10 @@ description: >
   Publish diff coverage report as PR comment, and create a coverage badge
   to display on the readme.
 inputs:
+  SSH_PRIVATE_KEY:
+    description: >
+      SSH key to access privare repositories
+    required: true
   CLOUDFLARE_TOKEN_ID:
     description: >
       A Cloudflare token id to work with git repository behind CF
@@ -69,3 +73,5 @@ runs:
     MINIMUM_ORANGE: ${{ inputs.MINIMUM_ORANGE }}
     TOKEN_ID: ${{ inputs.CLOUDFLARE_TOKEN_ID }}
     TOKEN_SECRET: ${{ inputs.CLOUDFLARE_TOKEN_SECRET }}
+    SSH_PRIVATE_KEY: ${{ inputs.SSH_PRIVATE_KEY }}
+  entrypoint: "entrypoint.sh"
