@@ -218,14 +218,14 @@ def post_comment(body: str, gh: github.Github, config: Config) -> None:
     repo = gh.get_repo(config.GITHUB_REPOSITORY)
     assert config.GITHUB_PR_NUMBER
     issue = repo.get_issue(config.GITHUB_PR_NUMBER)
-    for comment in issue.get_comments():
-        if comment.user.login == me and MARKER in comment.body:
-            print("Update previous comment")
-            comment.edit(body=body)
-            break
-    else:
-        print("Adding new comment")
-        issue.create_comment(body=body)
+    # for comment in issue.get_comments():
+    #     if comment.user.login == me and MARKER in comment.body:
+    #         print("Update previous comment")
+    #         comment.edit(body=body)
+    #         break
+    # else:
+    print("Adding new comment")
+    issue.create_comment(body=body)
 
 
 def compute_badge(coverage_info: dict, config: Config) -> str:
