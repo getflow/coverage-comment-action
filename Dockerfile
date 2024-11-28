@@ -20,4 +20,4 @@ COPY src/default.md.j2 /var/
 
 WORKDIR /workdir
 
-CMD [ "entrypoint" ]
+ENTRYPOINT [ "docker-entrypoint.sh" ]

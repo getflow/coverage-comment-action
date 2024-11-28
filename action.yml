@@ -74,4 +74,3 @@ runs:
     TOKEN_ID: ${{ inputs.CLOUDFLARE_TOKEN_ID }}
     TOKEN_SECRET: ${{ inputs.CLOUDFLARE_TOKEN_SECRET }}
     SSH_PRIVATE_KEY: ${{ inputs.SSH_PRIVATE_KEY }}
-  entrypoint: "entrypoint.sh"
