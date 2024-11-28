@@ -16,7 +16,6 @@ RUN pip install -r requirements.txt
 COPY src/entrypoint /usr/local/bin/
 COPY src/add-to-wiki /usr/local/bin/
 COPY src/default.md.j2 /var/
-COPY src/setup.sh /usr/local/bin
 
 WORKDIR /workdir
 

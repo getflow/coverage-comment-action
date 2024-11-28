@@ -63,7 +63,6 @@ runs:
   using: docker
   image: Dockerfile
   env:
-    SSH_KEY: ${{ inputs.SSH_KEY }}
     GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
     COVERAGE_FILE: ${{ inputs.COVERAGE_FILE }}
     COMMENT_TEMPLATE: ${{ inputs.COMMENT_TEMPLATE }}
@@ -74,4 +73,3 @@ runs:
     MINIMUM_ORANGE: ${{ inputs.MINIMUM_ORANGE }}
     TOKEN_ID: ${{ inputs.CLOUDFLARE_TOKEN_ID }}
     TOKEN_SECRET: ${{ inputs.CLOUDFLARE_TOKEN_SECRET }}
-  pre-entrypoint: 'setup.sh'
