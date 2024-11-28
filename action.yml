@@ -6,6 +6,10 @@ description: >
   Publish diff coverage report as PR comment, and create a coverage badge
   to display on the readme.
 inputs:
+  SSH_KEY:
+    description: >
+      SSH key to work with repository
+    required: true
   CLOUDFLARE_TOKEN_ID:
     description: >
       A Cloudflare token id to work with git repository behind CF
@@ -59,6 +63,7 @@ runs:
   using: docker
   image: Dockerfile
   env:
+    SSH_KEY: ${{ inputs.SSH_KEY }}
     GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
     COVERAGE_FILE: ${{ inputs.COVERAGE_FILE }}
     COMMENT_TEMPLATE: ${{ inputs.COMMENT_TEMPLATE }}
@@ -69,3 +74,4 @@ runs:
     MINIMUM_ORANGE: ${{ inputs.MINIMUM_ORANGE }}
     TOKEN_ID: ${{ inputs.CLOUDFLARE_TOKEN_ID }}
     TOKEN_SECRET: ${{ inputs.CLOUDFLARE_TOKEN_SECRET }}
+    pre-entrypoint: 'setup.sh'
