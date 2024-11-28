@@ -1,4 +1,4 @@
-FROM python:3-slim
+FROM getflow/cloudflared-ssh:python
 
 WORKDIR /src
 
