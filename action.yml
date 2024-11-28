@@ -6,6 +6,14 @@ description: >
   Publish diff coverage report as PR comment, and create a coverage badge
   to display on the readme.
 inputs:
+  CLOUDFLARE_TOKEN_ID:
+    description: >
+      A Cloudflare token id to work with git repository behind CF
+    required: true
+  CLOUDFLARE_TOKEN_SECRET:
+    description: >
+      A Cloudflare token secret to work with git repository behind CF
+    required: true
   GITHUB_TOKEN:
     description: >
       A GitHub token to write comments and write the badge to the wiki
@@ -49,8 +57,7 @@ inputs:
     required: false
 runs:
   using: docker
-  # image: Dockerfile
-  image: docker://ewjoachim/coverage-comment-action:latest
+  image: Dockerfile
   env:
     GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
     COVERAGE_FILE: ${{ inputs.COVERAGE_FILE }}
@@ -60,3 +67,5 @@ runs:
     BADGE_FILENAME: ${{ inputs.BADGE_FILENAME }}
     MINIMUM_GREEN: ${{ inputs.MINIMUM_GREEN }}
     MINIMUM_ORANGE: ${{ inputs.MINIMUM_ORANGE }}
+    TOKEN_ID: ${{ inputs.TOKEN_ID }}
+    TOKEN_SECRET: ${{ inputs.TOKEN_SECRET }}
